@@ -1,7 +1,7 @@
 const container = document.querySelector('#container');
 var button = document.getElementById("button");
 let myLibrary = [];
-
+let count = 0;
 
 
 function openForm() {
@@ -30,24 +30,27 @@ function addBookToLibrary(title, author, pages, hasRead) {
     myLibrary.push(newBook)
 }
 
+
+
+
 button.onclick = function() {
     document.getElementById("myForm").style.display = "block";
-    const form = document.querySelector('.signup');
-    //Todo: Need to make the submit button change the page, this button is simply opening the form
-    //addBookToLibrary(form.elements['author'], dasda, 15, true)
-    addBookToLibrary('steve', 'X', 12, true)
-    addBookToLibrary('sasdasd', 'asda', 122, true)
-    addBookToLibrary('zxczx', 'asda', 122,   true)
-    
-    for(let i = 0; i<myLibrary.length; i++){
-    var newDiv = document.createElement('div')
-    newDiv.id = "newDiv" + i
-    newDiv.textContent = myLibrary[i].info();
-    container.appendChild(newDiv)
-    
 }
 
-}
+    const form = document.querySelector("#book");
+    const submitBtn = document.querySelector("#submitBtn")
+        submitBtn.addEventListener('click',  function (e) {
+            e.preventDefault();
+        
+                addBookToLibrary(form.title.value, form.author.value, form.pages.value, true)    
+                var newDiv = document.createElement('div')
+                newDiv.id = "newDiv" + count
+                newDiv.textContent = myLibrary[count].info();
+                count++
+                container.appendChild(newDiv)
+        });
+        
+
 
 
 

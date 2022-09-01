@@ -19,20 +19,19 @@
       </div>
       <button class ="btn" id = "button" onclick="openForm()">Add book</button>
       <div class="form-popup" id="myForm">
-        <form action="" class="form-container">
+        <form action="" id ="book" class="form-container">
           <h1>New book</h1>
           
-<!--
           <label for="title"><b>Title</b></label>
-          <input type="text" placeholder="Title of book" name="Title" required>
--->
+          <input type="text" placeholder="Title of book" name="title" required>
+
           <label for="author"><b>author</b></label>
           <input type="text" placeholder="author's name" name="author" required>
       
           <label for="Pages"><b>Pages</b></label>
           <input type="text" placeholder="# of pages" name="pages" required>
       
-          <button type="submit" class="btn">Login</button>
+          <button type="submit" id="submitBtn" class="btn">Login</button>
           
         </form>
       </div>
